@@ -18,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/guardians', 'GuardianController@index');
+
+Route::get('/guardians/create', 'GuardianController@create');
+
+Route::post('/guardians/store', 'GuardianController@store');
+

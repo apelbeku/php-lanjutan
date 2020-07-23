@@ -8,7 +8,6 @@
 	<h1>Data Wali</h1>
 
 	<table border="1" style="width:100%;color: green;">
-		<th>
 			<tr>
 				<th>Nama</th>
 				<th>Nik</th>
@@ -18,7 +17,6 @@
 				<th>Almat</th>
 				<th>Orang Tua</th>
 			</tr>
-		</th>
 
 		<tbody>
 			@foreach($guardians as $guardian)

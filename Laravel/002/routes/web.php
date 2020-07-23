@@ -18,3 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/smartphone', 'SmartphoneController@index');
+
+Route::get('/smartphone/create', 'SmartphoneController@create');
+
+Route::post('/smartphone/store', 'SmartphoneController@store');
+
+Route::get('/smartphone2/create', 'Smartphone2@create');
+
+Route::post('/smartphone2/store', 'Smartphone2@store');
