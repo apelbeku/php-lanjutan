@@ -26,3 +26,9 @@ Route::post('/smartphone/store', 'SmartphoneController@store');
 Route::get('/smartphone2/create', 'Smartphone2@create');
 
 Route::post('/smartphone2/store', 'Smartphone2@store');
+
+Route::get('smartphone/edit/{id}', 'SmartphoneController@edit');
+
+Route::put('/smartphone/update/{id}', 'SmartphoneController@update');
+
+Route::delete('smartphone/delete/{id}', 'SmartphoneController@delete');

@@ -16,6 +16,7 @@
 				<th>Tanggal Lahir</th>
 				<th>Almat</th>
 				<th>Orang Tua</th>
+				<th>Action</th>
 			</tr>
 
 		<tbody>
@@ -28,6 +29,17 @@
 					<td>{{ $guardian->birth_date }}</td>
 					<td>{{ $guardian->address }}</td>
 					<td>{{ $guardian->is_parent ? 'Iya' : 'Tidak' }}</td>
+					<td>
+						<button>
+							
+						<a href="/guardians/edit/{{ $guardian->id }}">Edit</a>
+						
+						</button>
+						<form action="/guardians/delete/{{ $guardian->id }}" method="POST">
+							@csrf @method('delete')
+							<button>Delete</button>
+						</form>
+					</td>
 				</tr>
 			@endforeach
 		</tbody>

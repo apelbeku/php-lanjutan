@@ -28,4 +28,29 @@ class SmartphoneController extends Controller
 
     	return redirect('smartphone');
     }
+
+    public function edit($id)
+    {
+        $smartphone = Smartphone::find($id);
+
+        return view('smartphone.edit', compact('smartphone'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $gadget = Smartphone::find($id);
+        $gadget->name = $request->name;
+        $gadget->price = $request->price;
+        $gadget->stock = $request->stock;
+        $gadget->save();
+
+        return redirect('smartphone');
+    }
+
+    public function delete($id)
+    {
+        Smartphone::find($id)->delete();
+
+        return redirect('smartphone');
+    }
 }

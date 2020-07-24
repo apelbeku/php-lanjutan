@@ -11,6 +11,7 @@
 				<th>Name</th>
 				<th>Price</th>
 				<th>Stock</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 
@@ -20,6 +21,14 @@
 					<td>{{ $smartphone->name }}</td>
 					<td>{{ $smartphone->price }}</td>
 					<td>{{ $smartphone->stock }}</td>
+					<td>
+						<button>
+						<a href="/smartphone/edit/{{ $smartphone->id }}">Edit</a>
+						<form action="/smartphone/delete/{{ $smartphone->id }}" method="POST">
+							@csrf @method('delete')
+							<button>Delete</button>
+						</form>
+					</td>
 				</tr>
 			@endforeach
 		</tbody>
