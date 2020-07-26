@@ -26,7 +26,7 @@ class SmartphoneController extends Controller
     	$gadget->stock = $request->stock;
     	$gadget->save();
 
-    	return redirect('smartphone');
+    	return redirect('smartphones');
     }
 
     public function edit($id)
@@ -44,13 +44,13 @@ class SmartphoneController extends Controller
         $gadget->stock = $request->stock;
         $gadget->save();
 
-        return redirect('smartphone');
+        return redirect('smartphones');
     }
 
     public function delete($id)
     {
         Smartphone::find($id)->delete();
 
-        return redirect('smartphone');
+        return redirect('smartphones');
     }
 }

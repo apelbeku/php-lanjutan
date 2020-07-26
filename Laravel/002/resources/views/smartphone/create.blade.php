@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<form action="/smartphone/store" method="POST">
+	<form action="/smartphones/store" method="POST">
 		@csrf
 		<table>
 			<tr>

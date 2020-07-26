@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+	@extends('layout.app')
+	@section('title', 'Guardian')
+	@section('content')
 
 	<h1>Data Wali</h1>
 
@@ -16,6 +13,7 @@
 				<th>Tanggal Lahir</th>
 				<th>Almat</th>
 				<th>Orang Tua</th>
+				<th>Students</th>
 				<th>Action</th>
 			</tr>
 
@@ -29,6 +27,7 @@
 					<td>{{ $guardian->birth_date }}</td>
 					<td>{{ $guardian->address }}</td>
 					<td>{{ $guardian->is_parent ? 'Iya' : 'Tidak' }}</td>
+					<td>{{ $guardian->students()->count() }}</td>
 					<td>
 						<button>
 							
@@ -44,6 +43,4 @@
 			@endforeach
 		</tbody>
 	</table>
-
-</body>
-</html>
+@endsection

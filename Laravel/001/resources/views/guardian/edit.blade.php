@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-
-</head>
-<body>
+	@extends('layout.app')
+	@section('title', 'Guardian')
+	#section('content')
 
 	<h2>Edit</h2>
 	<form action="/guardians/update/{{ $guardian->id }}" method="POST">
@@ -56,6 +52,4 @@
 		</table>
 		<button>Update</button>
 	</form>
-
-</body>
-</html>
+@endsection

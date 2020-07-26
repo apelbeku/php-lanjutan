@@ -15,16 +15,16 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('guardian_id');
             $table->string('name');
             $table->enum('gender', ['l', 'p']);
             $table->string('nis', 20);
             $table->enum('class', ['10', '11', '12']);
             $table->text('address');
             $table->date('birth_date');
-            $table->enum('jurusan', ['ipa', 'ips', 'agama', 'bahasa']);
-            $table->integer('tinggi');
-            $table->integer('berat');
-            $table->foreignId('guardians_id');
+            $table->enum('majors', ['IPA', 'IPS', 'AGAMA', 'BAHASA']);
+            $table->unsignedSmallInteger('height');
+            $table->unsignedSmallInteger('weight');
             $table->timestamps();
         });
     }

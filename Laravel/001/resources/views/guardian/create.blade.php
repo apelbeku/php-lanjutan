@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-
-</head>
-<body>
+	@extends('layout.app')
+	@section('title', 'Guardian')
+	#section('content')
 
 	<form action="/guardians/store" method="POST">
 		@csrf
@@ -56,6 +52,4 @@
 		</table>
 		<button>Submit</button>
 	</form>
-
-</body>
-</html>
+@endsection

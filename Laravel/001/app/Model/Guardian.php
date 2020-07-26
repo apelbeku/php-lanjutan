@@ -9,4 +9,9 @@ class Guardian extends Model
      protected $fillable = [
     	'name', 'nik', 'gender', 'birth_date', 'address', 'is_parent'
     ];
+
+    public function students()
+    {
+    	return $this->hasMany('App\Model\Student');
+    }
 }

@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h2>Edit</h2>
-	<form action="/smartphone/update/{{ $smartphone->id }}" method="POST">
+	<form action="/smartphones/update/{{ $smartphone->id }}" method="POST">
 		@csrf @method('PUT')
 		<table>
 			<tr>

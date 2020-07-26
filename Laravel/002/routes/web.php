@@ -17,18 +17,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/smartphone', 'SmartphoneController@index');
+Route::get('/smartphones', 'SmartphoneController@index');
 
-Route::get('/smartphone/create', 'SmartphoneController@create');
+Route::get('/smartphones/create', 'SmartphoneController@create');
 
-Route::post('/smartphone/store', 'SmartphoneController@store');
+Route::post('/smartphones/store', 'SmartphoneController@store');
 
 Route::get('/smartphone2/create', 'Smartphone2@create');
 
 Route::post('/smartphone2/store', 'Smartphone2@store');
 
-Route::get('smartphone/edit/{id}', 'SmartphoneController@edit');
+Route::get('smartphones/edit/{id}', 'SmartphoneController@edit');
 
-Route::put('/smartphone/update/{id}', 'SmartphoneController@update');
+Route::put('/smartphones/update/{id}', 'SmartphoneController@update');
 
-Route::delete('smartphone/delete/{id}', 'SmartphoneController@delete');
+Route::delete('smartphones/delete/{id}', 'SmartphoneController@delete');
+
+Route::get('/vendors', 'VendorController@index');
+
+Route::get('/vendors/create', 'VendorController@create');
+
+Route::post('/vendors/store', 'VendorController@store');
+
+Route::get('vendors/edit/{id}', 'VendorController@edit');
+
+Route::put('/vendors/update/{id}', 'VendorController@update');
+
+Route::delete('vendors/delete/{id}', 'VendorController@delete');
