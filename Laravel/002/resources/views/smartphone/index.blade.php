@@ -1,9 +1,7 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
+	@extends('layout.app')
+	@section('title', 'smartphones')
+	@section('content')
+
 		<a href="/smartphones/create">Tambah</a>
 		<table border="1" style="width: 100%">
 			<thead>
@@ -33,6 +31,6 @@
 				@endforeach
 			</tbody>
 		</table>
-
+		@endsection
 	</body>
 	</html>

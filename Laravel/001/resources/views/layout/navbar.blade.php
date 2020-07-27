@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>@yield('title')</title>
-</head>
-<body>
+<nav>
+	<span>{{ auth()->check() ? auth()->user()->name : '-' }}</span> ||
+	<a href="/">home</a>
+	<a href="/guardians">The Guardians</a>
+	<a href="/studentss">student</a> ||
 
-	@include('layout.navbar')
-
-</body>
-</html>
+	<form method="POST" action="/logout">
+		@csrf
+		<button>Logout</button>
+	</form>
+</nav>

@@ -19,12 +19,6 @@ class StudentController extends Controller
     	return view('student.index', compact('students'));
     }
 
-    public function create()
-    {
-        $guardians = Guardian::all();
-
-    	return view('student.create', compact('guardians'));
-    }
 
     public function store(Request $request)
     {
@@ -33,6 +27,13 @@ class StudentController extends Controller
     	return redirect('students');
     }
 
+    public function create()
+    {
+        $guardians = Guardian::all();
+
+    	return view('student.create', compact('guardians'));
+    }
+    
     public function edit($id)
     {
         $student = $this->model->find($id);
