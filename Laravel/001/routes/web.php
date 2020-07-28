@@ -37,4 +37,4 @@ Route::get('/login','AuthController@login');
 Route::get('/register', 'AuthController@register');
 Route::post('/registration-process', 'AuthController@registrationProcess');
 Route::post('/login-process', 'AuthController@loginProcess');
-Routte::post('/logout', 'AuthController@logout');
+Route::post('/logout', 'AuthController@logout');

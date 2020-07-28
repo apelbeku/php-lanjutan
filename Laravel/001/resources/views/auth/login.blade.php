@@ -13,7 +13,6 @@
 		<input type="email" name="email">
 	</label>
 	<br>
-	<br>
 	<label>
 		Password
 		<input type="password" name="password">

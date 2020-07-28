@@ -5,12 +5,7 @@
 </head>
 <body>
 
-	<nav>
-		<a href="/guardians">Guardians</a> |
-		<a href="/students">Students</a>
-	</nav>
-
-	<hr>
+	@include('layout.navbar')
 
 	@yield('content')
 

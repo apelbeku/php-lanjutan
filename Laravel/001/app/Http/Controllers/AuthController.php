@@ -8,6 +8,12 @@ use App\Model\User;
 
 class AuthController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('guest')->only(['login', 'register', 'loginProcess', 'registrationProcess']);
+        $this->middleware('auth')->only(['logout']);
+    }
+
     public function login()
     {
     	return view('auth.login');

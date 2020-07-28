@@ -9,6 +9,7 @@ class GuardianController extends Controller
 {
     function __construct()
     {
+        $this->middleware('auth');
         $this->model = new Guardian();
     }
 
@@ -25,7 +26,7 @@ class GuardianController extends Controller
 
     public function store(Request $request)
     {
-    	$guard = new $this->model();
+    	$guard = new $this->model;
     	$guard->name = $request->name;
     	$guard->nik = $request->nik;
     	$guard->phone = $request->phone;

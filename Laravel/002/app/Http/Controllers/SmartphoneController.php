@@ -7,9 +7,15 @@ use App\Model\Smartphone;
 
 class SmartphoneController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('auth');
+        $this->model = new Smartphone();
+    }
+
     public function index()
     {
-    	$smartphones = Smartphone::all();
+    	$smartphones = $this->model->all();
     	return view('smartphone.index', compact('smartphones'));
     }
 
@@ -20,7 +26,7 @@ class SmartphoneController extends Controller
 
     public function store(Request $request)
     {
-    	$gadget = new smartphone();
+    	$gadget = new $this->model;
     	$gadget->name = $request->name;
     	$gadget->price = $request->price;
     	$gadget->stock = $request->stock;
@@ -31,14 +37,14 @@ class SmartphoneController extends Controller
 
     public function edit($id)
     {
-        $smartphone = Smartphone::find($id);
+        $smartphone = $this->model->find($id);
 
         return view('smartphone.edit', compact('smartphone'));
     }
 
     public function update(Request $request, $id)
     {
-        $gadget = Smartphone::find($id);
+        $gadget = $this->model->find($id);
         $gadget->name = $request->name;
         $gadget->price = $request->price;
         $gadget->stock = $request->stock;
