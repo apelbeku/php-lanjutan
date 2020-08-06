@@ -4,6 +4,7 @@
 
 	<h1>Data Wali</h1>
 
+	<a href="/guardians/create">Tambah</a>
 	<table border="1" style="width:100%;color: green;">
 			<tr>
 				<th>Nama</th>
@@ -14,6 +15,7 @@
 				<th>Almat</th>
 				<th>Orang Tua</th>
 				<th>Students</th>
+				<th>Created At</th>
 				<th>Action</th>
 			</tr>
 
@@ -28,6 +30,7 @@
 					<td>{{ $guardian->address }}</td>
 					<td>{{ $guardian->is_parent ? 'Iya' : 'Tidak' }}</td>
 					<td>{{ $guardian->students()->count() }}</td>
+					<td>{{ $guardian->created_at }}</td>
 					<td>
 						<button>
 							

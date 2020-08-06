@@ -36,3 +36,6 @@ Route::get('/register', 'AuthController@register');
 Route::post('/registration-process', 'AuthController@registrationProcess');
 Route::post('/login-process', 'AuthController@loginProcess');
 Route::post('/logout', 'AuthController@logout');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

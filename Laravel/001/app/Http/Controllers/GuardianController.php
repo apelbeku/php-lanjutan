@@ -9,13 +9,13 @@ class GuardianController extends Controller
 {
     function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->model = new Guardian();
     }
 
     public function index()
     {
-    	$guardians = $this->model->all();
+    	$guardians = $this->model->orderBy('created_at', 'desc')->get();
     	return view('guardian.index', compact('guardians'));
     }
 
@@ -26,6 +26,16 @@ class GuardianController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'nik' => 'required',
+            'phone' => 'required',
+            'gender' => 'required',
+            'birth_date' => 'required',
+            'address' => 'required',
+            'is_parent' => 'required',
+        ]);
+
     	$guard = new $this->model;
     	$guard->name = $request->name;
     	$guard->nik = $request->nik;
